@@ -11,8 +11,8 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 import sys
 import Fasta36_SeqSearch
-#import RNA
-#sys.path.append("/home/titan-4/Downloads/Pragya/ViennaRNA-2.4.17/interfaces/Python3/")
+import RNA
+sys.path.append("/home/titan-4/Downloads/Pragya/ViennaRNA-2.4.17/interfaces/Python3/")
 data = pd.read_csv("D://PhD_related/model_evaluation/comparison_deepcpf1-crisprDT/other_datasets/HT_2/H2.csv")
 data.columns = data.columns.str.strip()
 #print(data.columns.tolist())
