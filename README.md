@@ -25,11 +25,15 @@ Execution <br />
   <br />
   • For target efficiency prediction: <br />
   <br />
-  >> cd \LocationOfOff-targetPredictionPipeline\off-target_prediction_pipeline\
-  For the prediction of target efficiency for AsCpf1 species
+  >> cd \LocationOfOff-targetPredictionPipeline\off-target_prediction_pipeline\ <br />
+  <br />
+  For the prediction of target efficiency for AsCpf1 species <br />
+  <br />
   >> Python3 AsCpf1_main.py input_filename.fasta Reference_genome.fna Output_file.csv
-  Or 
-  For the prediction of target efficiency for LbCpf1 species
+  <br /> 
+ <br /> Or 
+  For the prediction of target efficiency for LbCpf1 species <br />
+  <br />
   >> Python3 LbCpf1_main.py input_filename.fasta Reference_genome.fna Output_file.csv
  <br />
 <br />
