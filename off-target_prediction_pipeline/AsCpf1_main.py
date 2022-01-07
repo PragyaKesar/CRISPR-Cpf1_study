@@ -1,7 +1,7 @@
 import warnings  
 import pandas as pd
 import numpy as np
-np.random.seed(198)
+np.random.seed(123)
 from sklearn.metrics import accuracy_score
 from sklearn import preprocessing
 from sklearn.neural_network import MLPClassifier
