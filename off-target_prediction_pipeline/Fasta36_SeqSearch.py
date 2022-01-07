@@ -84,19 +84,22 @@ for line2 in f1:
 Query_df = pd.DataFrame(list3, columns=['gRNA'])
 #dataframe with off-targets, end, start, strand, identity
 Seq_df1 = pd.DataFrame(list2, columns=['Off-target', 'END', 'START', 'Strand', 'Percentage identity'])
-LenE=Seq_df1["END"]
-LenS=Seq_df1["START"]
-LenD=[]
-for i, j in zip(LenE, LenS): 
-    D=int(i)- int(j)
-    LenD.append(D)
+h1=Seq_df1["Off-target"]
+h2=Query_df["gRNA"]
+LenO=[]
+LenG=[]
+for seqs1, seqs2 in zip(h1, h2): 
+    LenG.append(len(seqs2))
+    LenO.append(len(seqs1))
+
 #dataframe with length
-len_df = pd.DataFrame(LenD, columns=['Length'])
+len_df = pd.DataFrame(LenO, columns=['Off-target Length'])
+len_df2 = pd.DataFrame(LenG, columns=['gRNA Length'])
 #dataframe with chromosome number
 chr_df = pd.DataFrame(list1, columns=['Chromosome number'])
 #concatenate all the dataframes to form final dataframe
-OT_df = pd.concat([Query_df, Seq_df1, len_df, chr_df], axis=1)
+OT_df = pd.concat([Query_df, Seq_df1, len_df, len_df2, chr_df], axis=1)
 #extract specific column values
-OT_df1=OT_df[OT_df["Length"] == 27]
+OT_df1=OT_df[(OT_df['Off-target Length']) & (OT_df['gRNA Length']) == 27]
 #print final dataframe to command prompt screen
 print(OT_df1)
