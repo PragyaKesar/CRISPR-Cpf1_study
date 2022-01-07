@@ -11,14 +11,13 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 import sys
 import Fasta36_SeqSearch
-#import RNA
+import RNA
 #sys.path.append("/home/titan-4/Downloads/Pragya/ViennaRNA-2.4.17/interfaces/Python3/")
-data = pd.read_csv("D://PhD_related/model_evaluation/comparison_deepcpf1-crisprDT/other_datasets/HT_2/H2.csv")
-data.columns = data.columns.str.strip()
+#data = pd.read_csv("D://PhD_related/model_evaluation/comparison_deepcpf1-crisprDT/other_datasets/HT_2/H2.csv")
+#data.columns = data.columns.str.strip()
 #print(data.columns.tolist())
-#extract columns from dataset
-h1=data['Off-target']
-h2=data['Query']
+h1=OT_df1['Off-target']
+h2=OT_df1['gRNA']
 
 #define function for one-hot encoding of DNA sequence
 def seq_encode():
@@ -284,7 +283,7 @@ def ModelPred():
 	Features = FinalDF.iloc[:,0:-1]
 	Targets = FinalDF.iloc[:,-1]
 	#load prediction model for AsCpf1 (AdaboostClassifier)
-	Prediction = joblib.load('D://PhD_related/py_scripts/Final_scripts/AdaboostClassifier_AsCpf1.pkl')
+	Prediction = joblib.load('AdaboostClassifier_AsCpf1.pkl')
 	#prediction of probability for positive off-targets
 	Efficiency_score=Prediction.predict_proba(Features)[:,1]
 	h1_df=pd.DataFrame(sequences, columns=['Off-targets'])
