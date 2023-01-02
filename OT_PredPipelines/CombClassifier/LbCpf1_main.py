@@ -17,4 +17,4 @@ import sys
 import RNA
 
 #Probability prediction using AdabostClassifier with pre-defined function
-ClassVar=CombFeatureExtractor_LbCpf1.LbCpf1_AllFeatureExtractor..ModelPred()
+#ClassVar=CombFeatureExtractor_LbCpf1.LbCpf1_AllFeatureExtractor..ModelPred()
