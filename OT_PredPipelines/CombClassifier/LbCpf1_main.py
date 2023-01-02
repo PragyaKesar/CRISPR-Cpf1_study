@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import csv
 import sys
 from difflib import SequenceMatcher
-from CombFeatureExtractor_AsCpf1 import LbCpf1_AllFeatureExtractor
+from CombFeatureExtractor_LbCpf1 import LbCpf1_AllFeatureExtractor
 from Bio.SeqUtils import MeltingTemp as mt
 from Bio.Seq import Seq
 import pandas as pd
