@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import csv
 import sys
 from difflib import SequenceMatcher
-import AsCpf1FeatureExtractor
+from CombFeatureExtractor_AsCpf1 import LbCpf1_AllFeatureExtractor
 from Bio.SeqUtils import MeltingTemp as mt
 from Bio.Seq import Seq
 import pandas as pd
@@ -17,7 +17,7 @@ import sys
 import RNA
 
 #Probability prediction using AdabostClassifier with pre-defined function
-LbCpf1FE = CombFeatureExtractor_LbCpf1()
+LbCpf1FE = LbCpf1_AllFeatureExtractor()
 LbCpf1FE.seq_encode()
 LbCpf1FE.mismatch()
 LbCpf1FE.bulges()
