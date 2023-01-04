@@ -26,10 +26,13 @@ class LbCpf1_MMEFeatureExtractor:
 
     #define function for estimating binding energy of PAM sequence
 	def PAMEnergy():
-		global dna_encode_all, dna_encodei_all, sequences
+		global dna_encode_all, dna_encodei_all, BindingEnergyOT, BindingEnergyQ, RelativeBindingEnergy, sequences
 		sequences=[]
 		dna_encode_all = []
 		dna_encodei_all=[]
+		BindingEnergyOT=[]
+		BindingEnergyQ=[]
+		RelativeBindingEnergy=[]
 		#iterate over the columns values
 		for seqs, seqs1 in zip(h1,h2):
 			dna_encode = np.array([])
@@ -110,14 +113,14 @@ class LbCpf1_MMEFeatureExtractor:
 					dna_encode = np.append(dna_encode, np.array(['inf']).T)
 					dna_encodei = np.append(dna_encodei, np.array(['inf']).T)
 			PAMBindingEnergyQ=sum(dna_encodei)
-			PAMBindingEnergyOT=sum(dna_encode)
-			RelativePAM=PAMBindingEnergyOT-PAMBindingEnergyQ
-			#list contains encoding of all predicted off-target sequences
-			BindingEnergy.append(PAMBindingEnergyOT, PAMBindingEnergyQ, RelativePAM)
-			dna_encode_all.append(dna_encode)
-			dna_encodei_all.append(dna_encodei)
-
-	
+            		PAMBindingEnergyOT=sum(dna_encode)
+            		RelativePAM=PAMBindingEnergyOT-PAMBindingEnergyQ
+            		#list contains encoding of all predicted off-target sequences
+            		BindingEnergyOT.append(PAMBindingEnergyOT)
+            		BindingEnergyQ.append(PAMBindingEnergyQ)
+            		RelativeBindingEnergy.append(RelativePAM)
+            		dna_encode_all.append(dna_encode)
+            		dna_encodei_all.append(dna_encodei)
 
 	def MismatchEnergy():
 		global mismatch_listF
