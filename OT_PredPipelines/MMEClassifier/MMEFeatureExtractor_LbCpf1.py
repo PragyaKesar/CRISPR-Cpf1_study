@@ -21,10 +21,9 @@ h1=OT_df1['Off-target']
 h2=OT_df1['gRNA']
 
 class LbCpf1_MMEFeatureExtractor:
-    def __init__(self):
-        pass
-
-    #define function for estimating binding energy of PAM sequence
+	def __init__(self):
+        	pass
+#define function for estimating binding energy of PAM sequence
 	def PAMEnergy():
 		global dna_encode_all, dna_encodei_all, BindingEnergyOT, BindingEnergyQ, RelativeBindingEnergy, sequences
 		sequences=[]
