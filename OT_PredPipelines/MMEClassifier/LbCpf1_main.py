@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import csv
 import sys
 from difflib import SequenceMatcher
-import AsCpf1FeatureExtractor
+from MMEFeatureExtractor_LbCpf1 import LbCpf1_MMEFeatureExtractor
 from Bio.SeqUtils import MeltingTemp as mt
 from Bio.Seq import Seq
 import pandas as pd
@@ -17,4 +17,8 @@ import sys
 import RNA
 
 #Probability prediction using AdabostClassifier with pre-defined function
-ClassVar=MMEFeatureExtractor_LbCpf1.LbCpf1_MMEFeatureExtractor..ModelPred()
+LbCpf1FE = AsCpf1_MMEFeatureExtractor()
+LbCpf1FE.PAMEnergy()
+LbCpf1FE.MismatchEnergy()
+LbCpf1FE.DataFrameConstruct()
+LbCpf1FE.ModelPred()
